@@ -1,8 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-import kivy-deps.sdl2
-import kivy-deps.glew
 from kivymd import hooks_path as kivymd_hooks_path
 
 
