@@ -1,4 +1,6 @@
 kivy>=2.0
 kivy-deps.gstreamer>=0.3.3
+picamera>=1.13
+opencv-python>=4.5.5.64
 kivymd>=0.104.2
 pyinstaller>=4.3
