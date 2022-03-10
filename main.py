@@ -130,16 +130,6 @@ class Tab(MDFloatLayout, MDTabsBase):
 
 
 ###################CameraScreen###################
-class CameraScreen(Screen):
-    """This class will show the Cameraå of StudyStar"""
-    def capture(self):
-        '''
-        Function to capture the images and give them the names
-        according to their captured time and date.
-        '''
-        camera = self.ids['camera']
-        timestr = time.strftime("%Y%m%d_%H%M%S")
-        camera.export_to_png("IMG_{}.png".format(timestr))
 
 
 ###################ToDoScreen###################
@@ -491,9 +481,6 @@ class StudyStar(MDApp):
     def schedule(self, *args):
         self.window_manager.current = 'schscr'
     
-    def camera(self, *args):
-        self.window_manager.current = 'camera'
-
     def todo(self, *args):
         self.window_manager.current = 'todoscr'
 
