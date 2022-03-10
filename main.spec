@@ -2,7 +2,6 @@
 
 block_cipher = None
 from kivymd import hooks_path as kivymd_hooks_path
-import kivy_deps.gstreamer
 
 a = Analysis(['main.py'],
              pathex=[],
