@@ -18,6 +18,7 @@ jobs:
       - name: Install requirements
         run: |
           pip install -r requirements.txt
+          brew install -r brew.txt
       - name: Run PyInstaller
         run: |
           python -m PyInstaller main.spec
