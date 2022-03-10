@@ -4,6 +4,7 @@ block_cipher = None
 from kivy_deps import sdl2, glew
 from kivy_deps import gstreamer_dev as gstreamer
 from kivymd import hooks_path as kivymd_hooks_path
+from kivy_tools.packaging.pyinstaller_hooks import get_deps_minimal
 
 a = Analysis(['main.py'],
              pathex=[],
@@ -12,6 +13,7 @@ a = Analysis(['main.py'],
              hiddenimports=[],
              hookspath=[kivymd_hooks_path],
              runtime_hooks=[],
+             **get_deps_minimal(video=None, audio=None))
              excludes=[],
              win_no_prefer_redirects=False,
              win_private_assemblies=False,
