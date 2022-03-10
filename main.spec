@@ -1,7 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-from kivy_deps import sdl2, glew, gstreamer
+from kivy_deps import sdl2, glew
+from kivy-deps.gstreamer-dev import gstreamer-dev as gstreamer
 from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],
