@@ -1,13 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
+from kivymd import hooks_path as kivymd_hooks_path
+import kivy_deps.gstreamer
 
 a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
              datas=[('main.kv', '.')],
              hiddenimports=[],
-             hookspath=[hooks_path],
+             hookspath=[kivymd_hooks_path],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
