@@ -1,3 +1,4 @@
 kivy>=2.0
+kivy-deps.gstreamer>=0.3.3
 kivymd>=0.104.2
 pyinstaller>=4.3
