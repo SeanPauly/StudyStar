@@ -4,6 +4,8 @@ from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.core.text import LabelBase
 from kivy.uix.screenmanager import Screen
+import os, sys
+from kivy.resources import resource_add_path, resource_find
 import time
 from kivymd.uix.button import MDFlatButton
 from plyer import email
@@ -508,4 +510,6 @@ class StudyStar(MDApp):
         self.window_manager.current = 'playscr'
 
 if __name__ == '__main__':
+    if hasattr(sys, '_MEIPASS'):
+        resource_add_path(os.path.join(sys._MEIPASS))
     StudyStar().run()
