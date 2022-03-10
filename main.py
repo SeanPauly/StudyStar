@@ -31,10 +31,11 @@ from kivymd.uix.card import MDCard
 from kivy.core.window import Window
 from kivy.lang.builder import Builder
 import socketio
-
+from kivy import Config
 ###################size###################
 Window.size = (400, 700)
 __version__ = "0.0.1"
+Config.set('graphics', 'multisamples', '0')
 
 ###################MDLINKS###################
 '''
