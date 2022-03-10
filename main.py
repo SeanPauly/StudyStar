@@ -2,40 +2,26 @@
 from kivy.clock import Clock
 from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
-import os, sys
-from kivy.resources import resource_add_path, resource_find
 from kivy.core.text import LabelBase
 from kivy.uix.screenmanager import Screen
 import time
-from kivy.uix.popup import Popup
-import pytesseract
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.button import Button 
-from kivy.properties import ObjectProperty
-try:
-    from PIL import Image
-except ImportError:
-    from PIL import Image
 from kivymd.uix.button import MDFlatButton
 from plyer import email
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
+
 import json
-import webbrowser
 from Extra_Widgets.circularprogressbar import gpa, avg, count
 from kivy.uix.screenmanager import FadeTransition
 from kivymd.app import MDApp
-from kivymd.uix.card import MDCard
 from kivy.core.window import Window
 from kivy.lang.builder import Builder
 import socketio
-from kivy import Config
+
 ###################size###################
 Window.size = (400, 700)
-__version__ = "0.0.1"
-Config.set('graphics', 'multisamples', '0')
+
 
 ###################MDLINKS###################
 '''
@@ -51,20 +37,10 @@ Config.set('graphics', 'multisamples', '0')
 
 
 #############################################
-class SoSDialog(MDDialog):
-    pass
-
-class SoSDialog(MDDialog):
-    pass
-
-
 class CustomDialog(MDDialog):
     pass
 
 class Content(BoxLayout):
-    pass
-
-class IMG(MDCard):
     pass
 
 class CustomCancelButton(MDFlatButton):
@@ -114,66 +90,6 @@ class HomeScreen(Screen):
 
 
 ###################ScheduleScreen###################
-class LoadDialog(FloatLayout):
-    load = ObjectProperty(None)
-    cancel = ObjectProperty(None)
-    
-
-    def img(self, path, filename):
-        img = Image.open(str(filename[0]))
-        self.text = pytesseract.image_to_string(img, lang='eng', config="--psm 6")
-        re = pytesseract.image_to_string(img, lang='eng', config="--psm 6")
-        n = []
-        l = ""
-        for char in re:
-            if char.isalnum():
-                n.append(char)
-            elif char == ':' or char == '-':
-                n.append(char)
-            else:
-                continue
-        '''f = open("MobileAppDevelopment/StudyStar/Client/schedule.json", "a")
-        f.write(json.dumps(res))
-        f.close()'''
-        print(l.join(re))
-        print(n)
-        print(l.join(n))
-        #P17:45-9:14AMHUMANBODYSYSTEMS1307-SeidemanMP29:14-11:36AMWORLDHISTORY1214-ArnetteBP311:41-1:08PMSPANISHII1102-SloanHP41:08-2:32PMPERSONALFITNESSHoheM
-        self.cancel()
-
-    def show_result(self):
-        layout = BoxLayout(orientation='vertical')
-        layout2 = BoxLayout(orientation='horizontal', size_hint=(1,0.1))
-        closeButton = Button(text = "Close", size_hint=(0.5,1))
-        saveButton = Button(text = "Save", size_hint=(0.5,1))
-        content = TextInput(text=self.text, size_hint=(1,1))
-
-        
-        layout.add_widget(content)
-        layout2.add_widget(closeButton)
-        layout2.add_widget(saveButton)
-        layout.add_widget(layout2)
-
-
-        self._popup = Popup(title="Is this schedule correct?", content=layout, size_hint=(1, 1))
-        self._popup.open()
-        closeButton.bind(on_press =self._popup.dismiss)
-
-class OptionDialog(FloatLayout):
-    load = ObjectProperty(None)
-    cancel = ObjectProperty(None)
-    
-    def show_load_list(self):
-        content = LoadDialog(load=self.load_list, cancel=self.dismiss_popup)
-        self._popup = Popup(title="Load a file list", content=content, size_hint=(1, 1))
-        self._popup.open()
-
-    def load_list(self, path, filename):
-        pass
-
-    def dismiss_popup(self):
-        self._popup.dismiss()
-
 class ScheduleScreen(Screen):
     """This class will show the Schedule screen of StudyStar"""
     def on_pre_enter(self, *args):
@@ -205,28 +121,6 @@ class ScheduleScreen(Screen):
         self.ids.p8T.text = "[b]" + p8T + "[/b]"
         p8nrt = "[b]" + p8n + "[/b]" + "\n"
         self.ids.p8nrt.text = p8nrt + p8r + " - " + p8t
-    
-    load = ObjectProperty(None)
-    cancel = ObjectProperty(None)
-
-    def show_load_option(self):
-        content = OptionDialog(load=self.load_option, cancel=self.dismiss_popup)
-        self._popup = Popup(title="", content=content, size_hint=(.51, .1))
-        self._popup.open()
-
-    def load_option(self, path, filename):
-        pass
-    
-    def show_load_list(self):
-        content = LoadDialog(load=self.load_list, cancel=self.dismiss_popup)
-        self._popup = Popup(title="Load a file list", content=content, size_hint=(1, 1))
-        self._popup.open()
-
-    def load_list(self, path, filename):
-        pass
-
-    def dismiss_popup(self):
-        self._popup.dismiss()
 
 class Tab(MDFloatLayout, MDTabsBase):
     '''Class implementing content for a tab.'''
@@ -394,9 +288,18 @@ LabelBase.register(name='LobsterBoldItalic',
 
 
 ###################layouts###################
-Builder.load_file("main.kv")
+Builder.load_file("ScreenUI/SplashScreen.kv")
+Builder.load_file("ScreenUI/LoSScreen.kv")
+Builder.load_file("ScreenUI/HomeScreen.kv")
+Builder.load_file("ScreenUI/ProfileScreen.kv")
+Builder.load_file("ScreenUI/ScheduleScreen.kv")
+Builder.load_file("ScreenUI/CameraScreen.kv")
+Builder.load_file("ScreenUI/ToDoScreen.kv")
+Builder.load_file("ScreenUI/GradesScreen.kv")
+Builder.load_file("ScreenUI/LunchScreen.kv")
+Builder.load_file("ScreenUI/ActivitiesCalendarScreen.kv")
+Builder.load_file("ScreenUI/PlayScreen.kv")
 Builder.load_file("Extra_Widgets/EmailDialog.kv")
-Builder.load_file("Extra_Widgets/SoSDialog.kv")
 
 
 ###################app###################
@@ -550,7 +453,7 @@ class StudyStar(MDApp):
                 ],
             )
         self.dialog.open()
-
+    
     def send(self):
         recipient = self.dialog.content_cls.ids.recipient.text
         subject = self.dialog.content_cls.ids.subject.text
@@ -600,16 +503,9 @@ class StudyStar(MDApp):
 
     def actcal(self, *args):
         self.window_manager.current = 'actcal'
-        
+
     def playscr(self, *args):
         self.window_manager.current = 'playscr'
 
 if __name__ == '__main__':
-    try:
-        if hasattr(sys, '_MEIPASS'):
-            resource_add_path(os.path.join(sys._MEIPASS))
-        app = StudyStar()
-        app.run()
-    except Exception as e:
-        print(e)
-        input("Press enter.")
+    StudyStar().run()
