@@ -67,29 +67,6 @@
             size_hint_y: 1
             radius: [35]
 
-<CameraScreen>:
-    orientation: 'vertical'
-    FloatLayout:
-        Camera:
-            id: camera
-            allow_stretch: True
-            keep_ratio: False
-            resolution:  (root.width, root.height-100)
-            play: True
-
-        Button:
-            text: 'Capture'
-            size_hint_y: None
-            height: '48dp'
-            pos_hint: {'x': 0, 'center_y': .1} 
-            on_press: root.capture()    
-        Button:
-            text: 'Go Back'
-            size_hint_y: None
-            height: '48dp'
-            pos_hint: {'x': 0, 'center_y': .025}
-            on_press: app.schedule()
-
 <GradesScreen>:
     orientation: "vertical"
     spacing: 10
