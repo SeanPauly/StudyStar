@@ -2,7 +2,7 @@
 
 block_cipher = None
 from kivy_deps import sdl2, glew
-from kivy-deps.gstreamer-dev import gstreamer-dev as gstreamer
+from kivy_deps.gstreamer-dev import gstreamer-dev as gstreamer
 from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],

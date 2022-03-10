@@ -229,7 +229,6 @@ class GradesScreen(Screen):
         Clock.schedule_interval(self.animate2, 0.025)
         Clock.schedule_interval(self.animate3, 0.025)
 
-
 ###################LunchScreen###################
 class LunchScreen(Screen):
     """This class will show the Lunch screen of StudyStar"""
