@@ -1,6 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
+from kivy.deps import sdl2, glew
 from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],
@@ -30,10 +31,7 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True ) 
-
-
-
+          console=True )
 
 
 
