@@ -1,15 +1,14 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-from kivy_deps import sdl2, glew
-from kivymd import hooks_path as kivymd_hooks_path
+from kivy_deps import sdl2, glew, gstreamer
 
 a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
              datas=[('main.kv', '.')],
              hiddenimports=[],
-             hookspath=[kivymd_hooks_path],
+             hookspath=[],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
