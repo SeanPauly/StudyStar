@@ -1,39 +1,41 @@
 # -*- mode: python ; coding: utf-8 -*-
+import os
 
+spec_root = os.path.abspath(SPECPATH)
 block_cipher = None
 from kivy_deps import sdl2, glew
-from kivy_deps import gstreamer_dev as gstreamer
 from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],
-             pathex=[],
-             binaries=[],
-             datas=[('main.kv', '.'), ('./Backgrounds/*.png', 'images'), ('./Backgrounds/*.jpg', 'images'), ('./Extra_Widgets/*.py', 'Extra_Widgets'), ('./Extra_Widgets/*.kv', 'Extra_Widgets'), ('./Fonts/*.ttf', 'Fonts'), ('./Icons/*.png', 'Icons'), ('./WindowManager/*.py', 'WindowManager'), ('./WindowManager/*.kv', 'WindowManager')],
-             hiddenimports=[],
-             hookspath=[kivymd_hooks_path],
-             runtime_hooks=[],
-             excludes=[],
-             win_no_prefer_redirects=False,
-             win_private_assemblies=False,
-             cipher=block_cipher,
-             noarchive=False)
+            pathex=[spec_root],
+            binaries=[],
+            datas=[('main.kv', '.'), ('./Backgrounds/*.png', 'images'), ('./Backgrounds/*.jpg', 'images'), ('./Extra_Widgets/*.py', 'Extra_Widgets'), ('./Extra_Widgets/*.kv', 'Extra_Widgets'), ('./Fonts/*.ttf', 'Fonts'), ('./Icons/*.png', 'Icons'), ('./WindowManager/*.py', 'WindowManager'), ('./WindowManager/*.kv', 'WindowManager')],
+            hiddenimports=['win32timezone'],
+            hookspath=[kivymd_hooks_path],
+            runtime_hooks=[],
+            excludes=[],
+            win_no_prefer_redirects=False,
+            win_private_assemblies=False,
+            cipher=block_cipher,
+            noarchive=False)
 pyz = PYZ(a.pure, a.zipped_data,
-             cipher=block_cipher)
+            cipher=block_cipher)
 exe = EXE(pyz,
-          a.scripts,
-          a.binaries,
-          a.zipfiles,
-          a.datas,
-          *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins + gstreamer.dep_bins)],
-          name='main',
-          debug=False,
-          bootloader_ignore_signals=False,
-          strip=False,
-          upx=False,
-          upx_exclude=[],
-          runtime_tmpdir=None,
-          console=True )
-
-
-
+            a.scripts,
+            [],
+            exclude_binaries=True,
+            name='main',
+            debug=False,
+            bootloader_ignore_signals=False,
+            strip=False,
+            upx=False,
+            console=False)
+coll = COLLECT(exe,
+               a.binaries,
+               a.zipfiles,
+               a.datas,
+               *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
+               strip=False,
+               upx=False,
+               name='main')
 
