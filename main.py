@@ -22,7 +22,7 @@ from kivy.lang.builder import Builder
 import socketio
 
 ###################size###################
-Config.set('graphics', 'multisamples', '0')
+Config.set('graphics', 'multisamples', '2')
 Window.size = (400, 700)
 
 ###################MDLINKS###################
