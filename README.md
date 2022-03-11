@@ -3,12 +3,12 @@
 <h4 align="center">Voice: 314-341-2694</h4>
 <h4 align="center">Email: thatonecoder06@gmail.com</h4>
 <p align="center">
-  <img src="dist/Backgrounds/splashscreen.jpg" width="350" title="hover text">
-  <img src="dist/Backgrounds/home.jpg" width="350" alt="accessibility text">
-  <img src="dist/Backgrounds/profile.jpg" width="350" title="hover text">
-  <img src="dist/Backgrounds/schedule.jpg" width="350" alt="accessibility text">
-  <img src="dist/Backgrounds/grades.jpg" width="350" title="hover text">
-  <img src="dist/Backgrounds/lunch.jpg" width="350" alt="accessibility text">
+  <img src="Backgrounds/splashscreen.jpg" width="350" title="hover text">
+  <img src="Backgrounds/home.jpg" width="350" alt="accessibility text">
+  <img src="Backgrounds/profile.jpg" width="350" title="hover text">
+  <img src="Backgrounds/schedule.jpg" width="350" alt="accessibility text">
+  <img src="Backgrounds/grades.jpg" width="350" title="hover text">
+  <img src="Backgrounds/lunch.jpg" width="350" alt="accessibility text">
 </p>
 <h2 align="center">General Usage Notes</h2>
 <p align="center">- STUDENTS WILL HAVE THESE SCREENS</p>
