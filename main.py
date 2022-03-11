@@ -1,14 +1,11 @@
 ###################modules###################
-from kivy import Config
-Config.set('graphics', 'multisamples', '0')
-import os
-os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 from kivy.clock import Clock
 from kivymd.uix.tab import MDTabsBase
 from kivymd.uix.floatlayout import MDFloatLayout
 from kivy.core.text import LabelBase
 from kivy.uix.screenmanager import Screen
 import os, sys
+os.environ['KIVY_GL_BACKEND'] ='angle_sdl2'
 from kivy.resources import resource_add_path, resource_find
 import time
 from kivymd.uix.button import MDFlatButton
@@ -17,7 +14,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
 import json
-from Extra_Widgets.circularprogressbar import gpa, avg, count
+from dist.main.Extra_Widgets.circularprogressbar import gpa, avg, count
 from kivy.uix.screenmanager import FadeTransition
 from kivymd.app import MDApp
 from kivy.core.window import Window
@@ -56,7 +53,7 @@ class CustomSendButton(MDFlatButton):
 #############################################
 
 ###################scripts###################
-from WindowManager.WindowManager import *
+from dist.main.WindowManager.WindowManager import *
 
 
 ###################SplashScreen###################
@@ -281,17 +278,7 @@ LabelBase.register(name='LobsterBoldItalic',
 
 
 ###################layouts###################
-Builder.load_file("ScreenUI/SplashScreen.kv")
-Builder.load_file("ScreenUI/LoSScreen.kv")
-Builder.load_file("ScreenUI/HomeScreen.kv")
-Builder.load_file("ScreenUI/ProfileScreen.kv")
-Builder.load_file("ScreenUI/ScheduleScreen.kv")
-Builder.load_file("ScreenUI/CameraScreen.kv")
-Builder.load_file("ScreenUI/ToDoScreen.kv")
-Builder.load_file("ScreenUI/GradesScreen.kv")
-Builder.load_file("ScreenUI/LunchScreen.kv")
-Builder.load_file("ScreenUI/ActivitiesCalendarScreen.kv")
-Builder.load_file("ScreenUI/PlayScreen.kv")
+Builder.load_file("main.kv")
 Builder.load_file("Extra_Widgets/EmailDialog.kv")
 
 

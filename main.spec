@@ -3,8 +3,8 @@ import os
 
 spec_root = os.path.abspath(SPECPATH)
 block_cipher = None
-from kivy_deps import sdl2, glew
 from kivymd import hooks_path as kivymd_hooks_path
+from kivy_deps import sdl2, glew
 
 a = Analysis(['main.py'],
             pathex=[spec_root],
@@ -30,12 +30,12 @@ exe = EXE(pyz,
             strip=False,
             upx=False,
             console=False)
-coll = COLLECT(exe,
-               a.binaries,
-               a.zipfiles,
-               a.datas,
-               *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
-               strip=False,
-               upx=False,
-               name='main')
-
+coll = COLLECT(exe, Tree('StudyStar'),
+        a.binaries,
+        a.zipfiles,
+        a.datas,
+        *[Tree(p) for p in(sdl2.dep_bins + glew.dep_bins)],
+        strip=False,
+        upx=True,
+        upx_exclude=[],
+        name='name')
