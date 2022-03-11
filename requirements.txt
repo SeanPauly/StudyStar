@@ -2,6 +2,4 @@ kivy>=2.0
 kivy-deps.gstreamer-dev>=0.3.3
 opencv-python>=4.5.5.64
 kivymd>=0.104.2
-meson>=0.54
-ninja>=1.10.2.3
 pyinstaller>=4.3
