@@ -7,6 +7,7 @@ from kivy.uix.screenmanager import Screen
 import os, sys
 from kivy.resources import resource_add_path, resource_find
 import time
+from kivy import Config
 from kivymd.uix.button import MDFlatButton
 from plyer import email
 from kivy.uix.boxlayout import BoxLayout
@@ -21,8 +22,8 @@ from kivy.lang.builder import Builder
 import socketio
 
 ###################size###################
+Config.set('graphics', 'multisamples', '0')
 Window.size = (400, 700)
-
 
 ###################MDLINKS###################
 '''
