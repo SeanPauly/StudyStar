@@ -5,7 +5,7 @@ from kivy_deps import sdl2, glew
 from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],
-             pathex=[./main.py],
+             pathex=[],
              binaries=[],
              datas=[('main.kv', '.')],
              hiddenimports=[],
