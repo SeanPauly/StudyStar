@@ -1,16 +1,15 @@
 # -*- mode: python ; coding: utf-8 -*-
 
-
 block_cipher = None
-
+from kivy_deps import sdl2, glew
+from kivymd import hooks_path as kivymd_hooks_path
 
 a = Analysis(['main.py'],
-             pathex=[],
+             pathex=[./main.py],
              binaries=[],
-             datas=[],
+             datas=[('main.kv', '.')],
              hiddenimports=[],
-             hookspath=[],
-             hooksconfig={},
+             hookspath=[kivymd_hooks_path],
              runtime_hooks=[],
              excludes=[],
              win_no_prefer_redirects=False,
@@ -25,7 +24,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,  
-          [],
+          *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
           name='main',
           debug=False,
           bootloader_ignore_signals=False,
