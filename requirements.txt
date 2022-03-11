@@ -1,3 +1,4 @@
 pyinstaller>=4.3
 kivy-deps.sdl2
 kivy-deps.glew
+kivymd
