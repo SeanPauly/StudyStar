@@ -8,7 +8,7 @@ from kivymd import hooks_path as kivymd_hooks_path
 a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
-             datas=[('main.kv', '.')],
+             datas=[('main.kv', '.'), ('./Backgrounds/*.png', 'images'), ('./Backgrounds/*.jpg', 'images'), ('./Extra_Widgets/*.py', 'Extra_Widgets'), ('./Extra_Widgets/*.kv', 'Extra_Widgets'), ('./Fonts/*.ttf', 'Fonts'), ('./Icons/*.png', 'Icons'), ('./WindowManager/*.py', 'WindowManager'), ('./WindowManager/*.kv', 'WindowManager')],
              hiddenimports=[],
              hookspath=[kivymd_hooks_path],
              runtime_hooks=[],
