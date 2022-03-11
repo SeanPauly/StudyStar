@@ -12,7 +12,6 @@ from plyer import email
 from kivy.uix.boxlayout import BoxLayout
 from kivymd.uix.button import MDFlatButton
 from kivymd.uix.dialog import MDDialog
-
 import json
 from Extra_Widgets.circularprogressbar import gpa, avg, count
 from kivy.uix.screenmanager import FadeTransition
