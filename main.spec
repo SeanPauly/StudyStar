@@ -1,6 +1,7 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
+import kivy
 from kivy_deps import sdl2, glew 
 
 a = Analysis(['main.py'],
