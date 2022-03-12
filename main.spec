@@ -44,4 +44,4 @@ coll = COLLECT(exe, Tree('main'),
            *[Tree(p) for p in (sdl2.dep_bins + glew.dep_bins)],
            strip=False,
            upx=True,
-           name='touchtracer')
+           name='main')
