@@ -1,7 +1,6 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 block_cipher = None
-import kivy
 from kivy_deps import sdl2, glew 
 
 a = Analysis(['main.py'],
@@ -32,7 +31,7 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=True,
+          console=False,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
