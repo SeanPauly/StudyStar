@@ -20,11 +20,11 @@ jobs:
           pip install -r windows-requirements.txt
       - name: Run PyInstaller
         run: |
-          python -m PyInstaller --name StudyStar --onedir main.py
+          python -m PyInstaller --onedir main.py
       - uses: actions/upload-artifact@v2
         with:
-          name: StudyStar
-          path: dist/StudyStar.exe
+          name: main
+          path: dist/main.exe
 
       - name: create release
         id: create_release
@@ -45,8 +45,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/StudyStar.exe
-          asset_name: StudyStar.exe
+          asset_path: dist/main.exe
+          asset_name: main.exe
           asset_content_type: application/zip
 
   
