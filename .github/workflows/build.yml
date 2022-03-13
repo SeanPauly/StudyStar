@@ -78,7 +78,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ v.0.0.1-beta.1 Mac OS }}
+          release_name: ${{ v.0.0.1-beta.2 }}
           overwrite: true
           body: |
             Test Release v0.0.1
