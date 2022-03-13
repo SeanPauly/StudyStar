@@ -20,11 +20,11 @@ jobs:
           pip install -r windows-requirements.txt
       - name: Run PyInstaller
         run: |
-          python -m PyInstaller --onedir main.py
+          python -m PyInstaller --name  StudyStar --onedir main.py
       - uses: actions/upload-artifact@v2
         with:
-          name: main
-          path: dist/main.exe
+          name: StudyStar
+          path: dist/StudyStar.exe
 
       - name: create release
         id: create_release
@@ -34,7 +34,6 @@ jobs:
         with:
           tag_name: ${{ github.event.head_commit.message }}
           release_name: ${{ github.event.head_commit.message }}
-          overwrite: true
           body: |
             Test Release v0.0.1
           draft: false
