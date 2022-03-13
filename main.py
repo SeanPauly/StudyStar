@@ -45,6 +45,7 @@ __version__ = "0.0.1"
 - [Live](<Homepage url> "Coming Soon...")
 
 - [Bugs](https://github.c=m/SeanPauly/StudyStar/issues "Issues Page")
+
 '''
 
 
