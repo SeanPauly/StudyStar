@@ -1,12 +1,5 @@
-name: Build Workflow
-
-on:
-  push:
-#    branches: master
-
-jobs:
-  build-windows:
-    runs-on: windows-2019
+build-mac:
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -17,14 +10,14 @@ jobs:
           architecture: 'x64'
       - name: Install requirements
         run: |
-          pip install -r windows-requirements.txt
+          pip install -r mac-requirements.txt
       - name: Run PyInstaller
         run: |
           python -m PyInstaller --name  StudyStar --onedir main.py
       - uses: actions/upload-artifact@v2
         with:
-          name: main
-          path: dist/main.exe
+          name: StudyStar
+          path: dist/StudyStar
 
       - name: create release
         id: create_release
@@ -33,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ github.event.head_commit.message }}
+          release_name: v.0.0.1-beta.2
           overwrite: true
           body: |
             Test Release v0.0.1
@@ -46,8 +39,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/main.exe
-          asset_name: main.exe
+          asset_path: dist/StudyStar
+          asset_name: StudyStar
           asset_content_type: application/zip
-
-  
