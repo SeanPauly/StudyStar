@@ -1,0 +1,2087 @@
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+#:import Window kivy.core.window.Window
+#:import IconLeftWidget kivymd.uix.list.IconLeftWidget
+
+<ActivitiesCalendarScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before: 
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+<GradesScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+    MDCard:
+        spacing: dp(25)
+        pos_hint: {"center_x": .5, "center_y": .65}
+        md_bg_color: 0,0,0,0
+        elevation: 0
+        size_hint: .95, .15
+        MDFloatLayout:
+            GpaCircularProgressBar:
+                id: gpa
+                size_hint: (None, None)
+                height: 200
+                width: 200
+            
+            AvgCircularProgressBar:
+                id: avggrade
+                size_hint: (None, None)
+                height: 200
+                width: 200   
+            
+            CountCircularProgressBar:
+                id: countdown
+                size_hint: (None, None)
+                height: 200
+                width: 200    
+    
+
+    MDCard:
+        orientation: "vertical"
+        pos_hint: {"center_x": .5, "center_y": .3395}
+        size_hint: .95, .45
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        MDCard:
+            orientation: "horizontal"
+            pos_hint: {"center_x": .5, "center_y": .15}
+            size_hint: 1, .2
+            md_bg_color: rgba("#372B78")
+            radius: [35,35,0,0]
+            MDCard:
+                radius: [35,35,0,0]
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                size_hint: .85, 1
+                md_bg_color: rgba("#372B78")
+                MDLabel: 
+                    markup: True
+                    text: "[b]Current Grades[/b]"
+                    font_size: 40
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+            MDCard:
+                radius: [35,35,0,0]
+                elevation: 0
+                padding: [dp(55),dp(0),dp(0),dp(0)]
+                size_hint: .45, 1
+                md_bg_color: rgba("#372B78")
+                MDLabel: 
+                    markup: True
+                    text: "Term-2"
+                    font_size: 35
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            orientation: 'vertical'
+            size_hint_y: 1
+            pos_hint: {"top": 1}
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    markup: True
+                    text: "[b]Grade[/b]"
+                    size_hint_x: .25
+                MDLabel:
+                    markup: True
+                    text: "[b]Course Name[/b]"
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p1g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p1n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p2g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p2n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p3g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p3n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p4g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p4n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p5g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p5n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p6g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p6n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p7g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p7n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+            MDCard:
+                orientation: 'horizontal'
+                elevation: 0
+                padding: [dp(10),dp(0),dp(0),dp(0)]
+                spacing: dp(0)
+                pos_hint: {"center_x": .5}
+                md_bg_color: 1,1,1,1
+                size_hint: 1, 1
+                MDLabel:
+                    id: p8g
+                    markup: True
+                    text: ""
+                    size_hint_x: .25
+                MDLabel:
+                    id: p8n
+                    markup: True
+                    text: ""
+                    size_hint_x: .65
+
+            MDSeparator:
+
+<HomeScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(10)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDLabel: 
+                text: "StudyStar"
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_sos_dialog()
+            Image:
+                size_hint: .65, .65
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/SOS.png"
+    
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+        
+
+    MDGridLayout:
+        size_hint: 1, .75
+        spacing: 10, 10
+        padding: 10, 25
+        cols: 2
+        rows: 3
+        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.schedule()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/Schedule.png"
+            MDLabel:
+                text: "Schedule"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.todo()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/TODO.png"
+            MDLabel:
+                text: "To Do"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.grades()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/Grades.png"
+            MDLabel:
+                text: "Grades"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.lunch()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/Lunch.png"
+            MDLabel:
+                text: "Lunch"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.actcal()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/Sports.png"
+            MDLabel:
+                text: "Activities Calendar"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1        
+        MDCard:
+            orientation: "vertical"
+            radius: [25]
+            size_hint: .15, .15
+            on_release: app.playscr()
+            padding: 25, 
+            md_bg_color: rgba("#372B78")
+            Image:
+                pos_hint: {"center_x": .5}
+                size_hint: .75, .75
+                id: bg_image
+                source: "Icons/Play.png"
+            MDLabel:
+                text: "Play"
+                halign: "center"
+                font_style: "H6"
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1
+
+<LoSScreen>:
+    
+    MDCard:
+        size_hint: None, None
+        size: 300, 400
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+        elevation: 10
+        padding: 25
+        spacing: 25
+        orientation: 'vertical'
+
+        MDLabel:
+            id: lbl
+            text: ""
+            font_size: 40
+            halign: 'center'
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextFieldRound:
+            id: user
+            hint_text: "username"
+            icon_right: "account"
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: password
+            hint_text: "password"
+            icon_right: "eye-off"
+            size_hint_x: None
+            width: 200
+            font_size: 18
+            pos_hint: {"center_x": 0.5}
+            password: True
+
+        MDRoundFlatButton:
+            text: "LOG IN"
+            font_size: 12
+            pos_hint: {"center_x": 0.5}
+            on_press: 
+                root.Login()
+                app.checkdat()
+
+        MDRoundFlatButton:
+            text: "CLEAR"
+            font_size: 12
+            pos_hint: {"center_x": 0.5} 
+            on_press: root.clear()           
+
+        Widget:
+            size_hint_y: None
+            height: 10
+
+<LunchScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+    ScrollView:
+        size_hint: .95, 1
+        pos_hint: {"center_x": .5, "center_y": .25}
+        scroll_timeout: 100
+        MDList:
+            size_hint_y: None
+            height: 3600
+            MDGridLayout:
+                size_hint_x: 1
+                height: root.height
+                size_hint_y: None
+                height: 600
+                spacing: 10, 25
+                padding: 10, 25
+                cols: 2
+                rows: 1
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "Create"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Chicken & Cheese Quesadilla"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Fiesta Rice"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Mexican Street Corn"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "2Mato"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Bacon Cheeseburger Pizza"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Classic Pepperoni Pizza"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Classic Cheese Pizza"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+
+            MDGridLayout:
+                size_hint_x: 1
+                height: root.height
+                size_hint_y: None
+                height: 600
+                spacing: 10, 25
+                padding: 10, 25
+                cols: 2
+                rows: 1
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "Grill"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Classic Cheeseburger"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Spicy Chicken Sandwich"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Crispy Chicken Patty Sandwich"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}                
+                
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Toasty Three Cheese Sandwich"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "Sonos"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Seasoned Beef Taco"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Seasoned Beef Nachos"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Chicken Tacos"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Chicken Nachos"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+            MDGridLayout:
+                size_hint_x: 1
+                height: root.height
+                size_hint_y: None
+                height: 600
+                spacing: 10, 25
+                padding: 10, 25
+                cols: 2
+                rows: 1
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "Extra Extra"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Sliced Cucumbers"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Assorted Chilled Fruit"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Assorted Fruit Juice"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}   
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Mexican Pinto Bean & Cilantro Salad"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Fresh Whole Fruit"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+
+                MDCard:
+                    spacing: dp(10)
+                    size_hint_x: .15
+                    size_hint_y: 1
+                    orientation: "vertical"
+                    md_bg_color: rgba("#291857")
+                    MDCard:
+                        orientation: "vertical"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#372B78")
+                        MDLabel:
+                            text: "On the Go"
+                            halign: "center"
+                            font_style: "H6"
+                            theme_text_color: "Custom"
+                            text_color: 1,1,1,1    
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Blueberry Parfait with Granola"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Buffalo Ranch Chicken Wrap"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "BBQ Chicken Salad"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}   
+
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Whole Grain Parmesan Herb Croutons"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+                    
+                    MDCard:
+                        orientation: "horizontal"
+                        radius: [25]
+                        size_hint: 1, .05
+                        on_release: 
+                        padding: 25, 
+                        md_bg_color: rgba("#FFFFFF")
+                        MDLabel:
+                            text: "Herb Breadstick"
+                            font_size: dp(12.5)
+                            theme_text_color: "Custom"
+                            text_color: 0,0,0,1    
+                        MDIconButton:
+                            icon: 'information-variant'
+                            pos_hint: {"center_x": 1,"center_y": .5}
+
+<PlayScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+<ProfileScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+    ScrollView:
+        size_hint: .95, .725
+        pos_hint: {"center_x": .5}
+        scroll_timeout : 100
+        MDList:
+            spacing: 25
+            padding: [dp(0),dp(15),dp(0),dp(15)]
+            
+            MDLabel:
+                halign: 'center'
+                markup: True
+                theme_text_color: "Custom"
+                text: '[b]Personal[/b]'
+                font_size: 48
+                text_color: 1,1,1,1   
+            
+            MDList:
+                spacing: 25
+                padding: [dp(0),dp(15),dp(0),dp(15)]
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Name:[/b] Sean Pauly"
+
+                    IconLeftWidget:
+                        icon: "account"
+                
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Username:[/b] smp27"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Birthday:[/b] 02/10/2006"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Mobile Number:[/b] 314-341-2694"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Email:[/b] spauly@ofr5.com"
+
+                    IconLeftWidget:
+                        icon: "account"
+                
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Password:[/b] 975126sp"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Pronouns:[/b] He/Him"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+            MDLabel:
+                halign: 'center'
+                markup: True
+                theme_text_color: "Custom"
+                text: '[b]Personal[/b]'
+                font_size: 48
+                text_color: 1,1,1,1   
+
+            MDList:
+                spacing: 25
+                padding: [dp(0),dp(15),dp(0),dp(0)]
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Name:[/b] Sean Pauly"
+
+                    IconLeftWidget:
+                        icon: "account"
+                
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Username:[/b] smp27"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Birthday:[/b] 02/10/2006"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Mobile Number:[/b] 314-341-2694"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Email:[/b] spauly@ofr5.com"
+
+                    IconLeftWidget:
+                        icon: "account"
+                
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Password:[/b] 975126sp"
+
+                    IconLeftWidget:
+                        icon: "account"
+
+                # Content of card.
+                OneLineIconListItem:
+                    bg_color: rgba("#372B78")
+                    markup: True
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+                    text: "[b]Pronouns:[/b] He/Him"
+
+                    IconLeftWidget:
+                        icon: "account"            
+
+<TabbedPanelHeader>:  # derived from ToggleButton
+    valign: 'middle'
+    background_color: {'normal': (.5, .5, .5, 1), 'down': (1, .5, .5, 1)} [self.state]
+    font_size: '15sp'
+
+<OptionDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: None
+            height: 60
+            Button:
+                text: "Photo Library"
+                on_release: root.photo()
+            Button:
+                text: "Take Photo"
+                on_release: root.camera()
+            Button:
+                text: "Choose File"
+                on_release: root.show_load_list()
+
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserIconView:
+            id: filechooser
+            path: './'
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+            Button:
+                text: "Load"
+                on_release:
+                    root.img(filechooser.path, filechooser.selection)
+                    root.show_result()
+
+
+<ScheduleScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+                
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+    MDCard:
+        orientation: "vertical"
+        pos_hint: {"center_x": .5, "center_y": .45}
+        size_hint: .95, .55
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        MDCard:
+            orientation: "horizontal"
+            pos_hint: {"center_x": .5, "center_y": .45}
+            size_hint: 1, .1
+            md_bg_color: rgba("#372B78")
+            radius: [35,35,0,0]
+            MDCard:
+                radius: [35,35,0,0]
+                elevation: 0
+                padding: [dp(10),dp(15),dp(45),dp(7)]
+                size_hint: .75, 1
+                md_bg_color: rgba("#372B78")
+                MDLabel: 
+                    markup: True
+                    text: "[b]Student Schedule[/b]"
+                    font_size: 40
+                    theme_text_color: "Custom"
+                    text_color: 1,1,1,1    
+            MDCard:
+                radius: [35,35,0,0]
+                elevation: 0
+                size_hint: .125, 1
+                md_bg_color: rgba("#372B78")
+                MDIconButton:
+                    pos_hint: {"center_x": .5, "center_y": .5}
+                    icon: "cloud-upload-outline"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    on_release: root.show_load_option()
+        
+        MDSeparator:
+        
+        MDTabs:
+            id: tabs
+            tab_hint_x: True
+            allow_stretch: True
+            background_color: 1,1,1,1
+            text_color_normal: 0, 0, 0, 1
+            text_color_active: rgba("#4451AF")
+            color_indicator: rgba("#F4C344")
+            Tab:
+                id: tab1
+                markup: True
+                title: "[b]A Day[/b]"
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": 1}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P1[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p1T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p1nrt
+                            markup: True
+                            text: ""
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .75}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P2[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p2T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p2nrt
+                            markup: True
+                            text: ""
+             
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .50}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P3[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p3T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p3nrt
+                            markup: True
+                            text: ""            
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .25}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P4[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p4T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p4nrt
+                            markup: True
+                            text: ""           
+            
+            Tab:
+                id: tab2
+                markup: True
+                title: "[b]B Day[/b]"               
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": 1}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P5[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p5T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p5nrt
+                            markup: True
+                            text: ""                
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .75}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P6[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p6T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p6nrt
+                            markup: True
+                            text: ""                    
+        
+
+                         
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .50}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P7[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p7T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p7nrt
+                            markup: True
+                            text: ""                    
+        
+
+                    
+                MDCard:
+                    elevation: 0
+                    size_hint_y: .25
+                    pos_hint: {"top": .25}
+                    MDCard:
+                        elevation: 0
+                        padding: [dp(10),dp(0),dp(0),dp(20)]
+                        spacing: dp(20)
+                        pos_hint: {"center_x": .25}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            markup: True
+                            text: "[b]P8[/b]"
+                            size_hint_x: .25
+
+                        MDLabel:
+                            markup: True
+                            id: p8T
+                            text: ""
+
+                    MDCard:
+                        elevation: 0
+                        pos_hint: {"center_x": .75}
+                        orientation: 'horizontal'
+                        md_bg_color: 1,1,1,1
+                        size_hint: .5, 1
+                        MDLabel:
+                            id: p8nrt
+                            markup: True
+                            text: ""         
+        
+<SplashScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/splashscreen.jpg'
+            size: root.width, root.height
+            pos: self.pos
+
+<ToDoScreen>:
+    orientation: "vertical"
+    spacing: 10
+    space_x: self.size[0]/3
+  
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:'Backgrounds/ABG.png'
+            size: root.width, root.height
+    
+    MDCard:
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .97}
+        size_hint: 1, .085
+        md_bg_color: rgba("#372B78")
+        MDCard:
+            elevation: 0
+            padding: [dp(10),dp(15),dp(50),dp(7)]
+            size_hint: .75, 1
+            md_bg_color: rgba("#372B78")
+            MDTextButton: 
+                text: "StudyStar"
+                on_release: app.home()
+                font_name:"LobsterBold"
+                font_size: 64
+                theme_text_color: "Custom"
+                text_color: 1,1,1,1    
+        MDCard:
+            elevation: 0
+            size_hint: .25, 1
+            md_bg_color: rgba("#372B78")
+            on_release: app.show_email_dialog()
+            Image:
+                size_hint: .75, .75
+                pos_hint: {"center_x": .5, "center_y": .375}
+                source: "Icons/Email.png"
+
+    MDCard:
+        id: profile_cd
+        orientation: "horizontal"
+        pos_hint: {"center_x": .5, "center_y": .825}
+        size_hint: .95, .15
+        on_release: app.profile ()
+        md_bg_color: rgba("#372B78")
+        radius: [35]
+        ThreeLineListItem:
+            id: profile_cd_lst
+            markup: True
+            theme_text_color: "Custom"
+            text_color: 1,1,1,1
+            secondary_theme_text_color: 'Custom'    
+            secondary_text_color: 1,1,1,1
+            tertiary_theme_text_color: 'Custom'
+            tertiary_text_color: 1,1,1,1 
+            text: "[b][/b]"
+            secondary_text: "ORCHARD FARM HIGH SCHOOL"
+            tertiary_text: "Grade 10"
+        FitImage:
+            id: profile_cd_img
+            size_hint_x: .35
+            size_hint_y: 1
+            radius: [35]
+
+    ScrollView:
+        size_hint: 1, .9
+        scroll_timeout : 100
+
+        MDList:
+            id: md_list
+            padding: 0
+
+<SwipeToDeleteItem>:
+    size_hint_y: None
+    height: content.height
+
+    MDCardSwipeLayerBox:
+        # Content under the card.
+
+    MDCardSwipeFrontBox:
+
+        # Content of card.
+        ThreeLineAvatarListItem:
+            id: content
+            text: root.text
+            secondary_text: "Secondary text here"
+            tertiary_text: "fit more text than usual"
+            _no_ripple_effect: True
