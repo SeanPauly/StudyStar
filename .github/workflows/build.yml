@@ -20,7 +20,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run PyInstaller
         run: |
-          python -m PyInstaller --onedir main.spec
+          python -m PyInstaller --name  StudyStar --onedir main.py
       - uses: actions/upload-artifact@v2
         with:
           name: main
