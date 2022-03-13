@@ -18,11 +18,12 @@ jobs:
       - name: Install requirements
         run: |
           pip install -r windows-requirements.txt
-      - name: Run PyInstaller
-        run: |
+      - name: Run PyInstaller main.py
+        run: | 
           python -m PyInstaller main.py
+      - name: Run PyInstaller main.spec
         run: |
-          Run python -m PyInstaller main.spec
+          python -m PyInstaller main.spec
       - uses: actions/upload-artifact@v2
         with:
           name: main
