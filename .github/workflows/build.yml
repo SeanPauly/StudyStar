@@ -21,7 +21,8 @@ jobs:
       - name: Run PyInstaller
         run: |
           python -m PyInstaller main.py
-          python -m PyInstaller main.spec
+        run: |
+          Run python -m PyInstaller main.spec
       - uses: actions/upload-artifact@v2
         with:
           name: main
