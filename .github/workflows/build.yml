@@ -20,7 +20,7 @@ jobs:
           pip install -r requirements.txt
       - name: Run PyInstaller
         run: |
-          python -m PyInstaller --onefile --windowed main.spec
+          python -m PyInstaller --onefile main.spec
       - uses: actions/upload-artifact@v2
         with:
           name: main
