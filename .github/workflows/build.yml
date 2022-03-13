@@ -68,8 +68,8 @@ jobs:
           python -m PyInstaller --name  StudyStar --onedir main.py
       - uses: actions/upload-artifact@v2
         with:
-          name: main
-          path: dist/main.exe
+          name: StudyStar
+          path: dist/StudyStar
 
       - name: create release
         id: create_release
@@ -78,7 +78,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.head_commit.message }}
-          release_name: ${{ github.event.head_commit.message }}
+          release_name: ${{ v.0.0.1-beta.1 Mac OS }}
           overwrite: true
           body: |
             Test Release v0.0.1
@@ -91,6 +91,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
-          asset_path: dist/main.exe
-          asset_name: main.exe
+          asset_path: dist/StudyStar
+          asset_name: StudyStar
           asset_content_type: application/zip
