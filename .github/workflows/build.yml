@@ -1,7 +1,9 @@
 name: Build Workflow
+
 on:
   push:
 #    branches: master
+
 jobs:
   build-windows:
     runs-on: windows-2019
