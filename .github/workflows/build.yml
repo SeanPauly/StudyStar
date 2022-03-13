@@ -47,7 +47,7 @@ jobs:
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
           asset_path: dist/main
-          asset_name: main.exxe
+          asset_name: main.exe
           asset_content_type: application/zip
 
   build-macos:
@@ -69,7 +69,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: main
-          path: dist/main
+          path: dist/main.app
 
       - name: create release
         id: create_release
@@ -92,5 +92,5 @@ jobs:
         with:
           upload_url: ${{steps.create_release.outputs.upload_url}}
           asset_path: dist/main
-          asset_name: main
+          asset_name: main.app
           asset_content_type: application/zip
