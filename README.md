@@ -34,7 +34,7 @@ Extensive installation instructions as well as tutorials and general
 documentation, including an API reference, can be found at https://kivy.org/docs.
 A [PDF version](https://media.readthedocs.org/pdf/kivy/latest/kivy.pdf) is also available.
 
-Kivy ships with many examples which can be found in the `examples` folder.
+Kivy ships with many folders.
 
 Support
 -------
