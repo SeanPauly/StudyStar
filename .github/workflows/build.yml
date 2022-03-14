@@ -63,9 +63,9 @@ jobs:
       - name: Install requirements
         run: |
           pip install -r mac-requirements.txt
-      - name: Run PyInstaller main.spec
+      - name: Run PyInstaller --onedir main.spec
         run: | 
-          python -m PyInstaller main.spec
+          python -m PyInstaller --onedir main.spec
       - uses: actions/upload-artifact@v2
         with:
           name: main
